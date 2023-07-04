@@ -1,0 +1,4 @@
+enable-source-maps: true
+timeout: "3600000"
+slow: "8000"
+reporter: "min"

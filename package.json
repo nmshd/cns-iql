@@ -1,0 +1,44 @@
+{
+    "name": "@nmshd/cns-iql",
+    "version": "0.0.1",
+    "description": "Identity Query Language - A DSL for filtering Enmeshed attributes",
+    "homepage": "https://enmeshed.eu",
+    "repository": "github:nmshd/cns-iql",
+    "license": "MIT",
+    "author": "js-soft GmbH",
+    "main": "dist/src/index.js",
+    "types": "dist/src/index.d.ts",
+    "files": [
+        "dist/src",
+        "dist/generated"
+    ],
+    "scripts": {
+        "test": "npm run build && npx mocha ./dist/tests/**/*.test.js",
+        "build": "npm run build:clean && npm run build:parser && npm run build:version.ts && npx tsc -p ./tsconfig.json",
+        "build:clean": "rm -rf ./dist ./generated",
+        "build:parser": "mkdir -p generated && npx peggy -o ./generated/iql.js ./src/grammar.peggy",
+        "build:version.ts": "mkdir -p generated && node -p \"'export const LIB_VERSION = ' + JSON.stringify(require('./package.json').version) + ';'\" > generated/version.ts",
+        "lint": "npm run build && npx eslint 'src/**/*.ts' 'tests/**/*.ts'",
+        "demo": "npm run build && npx light-server -s ./demo -w 'src/grammar.peggy, demo/app.js, demo/attributes.js, demo/index.html # cd demo && npm run build && npx webpack --mode production'"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.3.4",
+        "@types/lodash": "^4.14.194",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^20.3.1",
+        "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "chai": "^4.3.7",
+        "eslint": "^8.44.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "light-server": "^2.9.1",
+        "mocha": "^10.2.0",
+        "prettier": "^2.8.8",
+        "typescript": "^5.0.4",
+        "webpack": "^5.88.1",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+        "peggy": "^3.0.2"
+    }
+}
