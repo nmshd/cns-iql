@@ -1,6 +1,6 @@
 # Development
 
-To bootstrap the project, clone the repository and run `npm i`. Afterwards the following commands are available:
+To bootstrap the project clone the repository, run `nvm use` and `npm i`. Afterwards the following commands are available:
 
 - `npm run demo`: Serves a demo application at *localhost:4000* using *demo/attributes.js* as dummy data. App recompiles and reloads if the data, the app code or the grammar is changed.
 - `npm run build`: Runs full compilation pipeline.
