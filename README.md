@@ -8,3 +8,8 @@ To bootstrap the project clone the repository, run `nvm use` and `npm i`. Afterw
 - `npm run lint`: Runs ESLint.
 
 The `demo/` directory contains the live demo's files, `src/grammar.peggy` is the definition file for the IQL grammar. The remainder are either self-explanatory or customary files and directories.
+
+Publishing to npmjs.com is done via a Github pipeline, triggered by pushing a new tag:
+- increment version in *package.json*
+- create a new tag locally: `git tag "$(jq -r '.version' package.json)"`
+- push tag to remote: `git push origin "$(jq -r '.version' package.json)"`
