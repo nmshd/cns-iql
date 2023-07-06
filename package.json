@@ -1,7 +1,7 @@
 {
     "name": "@nmshd/cns-iql",
     "version": "0.0.1",
-    "description": "Identity Query Language - A DSL for filtering Enmeshed attributes",
+    "description": "Identity Query Language - A DSL to filter and query Enmeshed attributes",
     "homepage": "https://enmeshed.eu",
     "repository": "github:nmshd/cns-iql",
     "license": "MIT",
