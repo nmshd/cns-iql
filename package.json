@@ -1,5 +1,5 @@
 {
-    "name": "@nmshd/cns-iql",
+    "name": "@nmshd/iql",
     "version": "0.0.1",
     "description": "Identity Query Language - A DSL to filter and query Enmeshed attributes",
     "homepage": "https://enmeshed.eu",
