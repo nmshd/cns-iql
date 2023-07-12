@@ -13,7 +13,7 @@
         "dist/generated"
     ],
     "scripts": {
-        "test": "npm run build && npx mocha ./dist/tests/**/*.test.js",
+        "test": "npm run build && npx run lint && npx mocha ./dist/tests/**/*.test.js",
         "build": "npm run build:clean && npm run build:parser && npm run build:version.ts && npx tsc -p ./tsconfig.json",
         "build:clean": "rm -rf ./dist ./generated",
         "build:parser": "mkdir -p generated && npx peggy -o ./generated/iql.js ./src/grammar.peggy",
