@@ -23,11 +23,13 @@ export function execute(iqlQuery: string, attributes: AttributeView[]): number[]
     return parse(iqlQuery, { attributes }) as number[]
 }
 
-export interface IValidateResult {
-    isValid: boolean
+export interface IValidateSuccess {
+    isValid: true
+}
 
-    /* Defined iff isValid is false */
-    error?: {
+export interface IValidateError {
+    isValid: false
+    error: {
         message: string
 
         /* Location of syntax error in the input string. */
@@ -45,6 +47,8 @@ export interface IValidateResult {
         }
     }
 }
+
+type IValidateResult = IValidateSuccess | IValidateError
 
 export function validate(iqlQuery: string): IValidateResult {
     try {
