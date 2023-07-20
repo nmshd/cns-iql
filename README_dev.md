@@ -1,0 +1,16 @@
+# Development
+
+To bootstrap the project clone the repository, run `nvm use` and `npm i`. Afterwards the following commands are available:
+
+-   `npm run demo`: Serves a demo application at _localhost:4000_ using _demo/attributes.js_ as dummy data. App recompiles and reloads if the data, the app code or the grammar is changed.
+-   `npm run build`: Runs full compilation pipeline.
+-   `npm run test`: Runs tests.
+-   `npm run lint`: Runs ESLint.
+
+The `demo/` directory contains the live demo's files, `src/grammar.peggy` is the definition file for the IQL grammar. The remainder are either self-explanatory or customary files and directories.
+
+Publishing to npmjs.com is done via a Github pipeline, triggered by pushing a new tag:
+
+-   increment version in _package.json_
+-   create a new tag locally: `git tag "$(jq -r '.version' package.json)"`
+-   push tag to remote: `git push origin "$(jq -r '.version' package.json)"`
