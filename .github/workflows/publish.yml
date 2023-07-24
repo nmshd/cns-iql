@@ -1,4 +1,4 @@
-name: Publish on npmjs.com
+name: Publish
 
 on:
     push:
@@ -16,6 +16,6 @@ jobs:
             - run: npm ci
             - run: npm run build
             - run: .ci/runChecks.sh
-            - run: npm publish --access public
+            - run: npx enhanced-publish --if-possible --use-preid-as-tag
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
