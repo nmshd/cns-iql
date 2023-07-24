@@ -24,7 +24,6 @@
         "lint:tsc": "tsc --noEmit",
         "test": "npm run build && npx mocha ./dist/tests/**/*.test.js"
     },
-    "dependencies": {},
     "devDependencies": {
         "@js-soft/license-check": "^1.0.6",
         "@types/chai": "^4.3.4",
