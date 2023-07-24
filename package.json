@@ -24,9 +24,7 @@
         "lint:tsc": "tsc --noEmit",
         "test": "npm run build && npx mocha ./dist/tests/**/*.test.js"
     },
-    "dependencies": {
-        "peggy": "^3.0.2"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@js-soft/license-check": "^1.0.6",
         "@types/chai": "^4.3.4",
@@ -41,6 +39,7 @@
         "light-server": "^2.9.1",
         "lodash": "^4.17.21",
         "mocha": "^10.2.0",
+        "peggy": "^3.0.2",
         "prettier": "^2.8.8",
         "typescript": "^5.0.4",
         "webpack": "^5.88.1",
