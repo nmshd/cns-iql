@@ -19,7 +19,7 @@
         "emitDecoratorMetadata": true,
         "typeRoots": ["./node_modules/@types"],
         "moduleResolution": "node",
-        "resolveJsonModule": true,
+        "resolveJsonModule": true
     },
     "ts-node": { "compiler": "typescript" },
     "include": ["./src/**/*", "./generated/**/*", "./tests/**/*"]
