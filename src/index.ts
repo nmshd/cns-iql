@@ -48,7 +48,7 @@ export interface IValidateError {
     }
 }
 
-type IValidateResult = IValidateSuccess | IValidateError
+export type IValidateResult = IValidateSuccess | IValidateError
 
 export function validate(iqlQuery: string): IValidateResult {
     try {
