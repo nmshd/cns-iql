@@ -33,7 +33,11 @@ queryTextBox.addEventListener("input", (e) => {
     if (!validationResult.isValid) {
         queryTextBox.style.borderColor = "red"
         queryTextBox.style.outlineColor = "red"
-        validationTextBox.value = " ".repeat(validationResult.error.location.start.column - 1) + "^\n" + "Error: " + validationResult.error.message
+        validationTextBox.value =
+            " ".repeat(validationResult.error.location.start.column - 1) +
+            "^\n" +
+            "Error: " +
+            validationResult.error.message
         highlightMatches([])
     } else {
         queryTextBox.style.borderColor = "black"

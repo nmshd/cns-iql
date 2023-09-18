@@ -1,15 +1,27 @@
-# Development
+# IQL - The Enmeshed Identity Query Language
 
-To bootstrap the project clone the repository, run `nvm use` and `npm i`. Afterwards the following commands are available:
+[![GitHub Actions CI](https://github.com/nmshd/cns-iql/workflows/Publish/badge.svg)](https://github.com/nmshd/cns-iql/actions?query=workflow%3APublish)
 
-- `npm run demo`: Serves a demo application at *localhost:4000* using *demo/attributes.js* as dummy data. App recompiles and reloads if the data, the app code or the grammar is changed.
-- `npm run build`: Runs full compilation pipeline.
-- `npm run test`: Runs tests.
-- `npm run lint`: Runs ESLint.
+[![npm version](https://badge.fury.io/js/@nmshd%2Fiql.svg)](https://www.npmjs.com/package/@nmshd/iql)
 
-The `demo/` directory contains the live demo's files, `src/grammar.peggy` is the definition file for the IQL grammar. The remainder are either self-explanatory or customary files and directories.
+IQL is a domain-specific language to filter and query Enmeshed attributes.
 
-Publishing to npmjs.com is done via a Github pipeline, triggered by pushing a new tag:
-- increment version in *package.json*
-- create a new tag locally: `git tag "$(jq -r '.version' package.json)"`
-- push tag to remote: `git push origin "$(jq -r '.version' package.json)"`
+## Documentation
+
+You can find the documentation for Enmeshed on [enmeshed.eu](https://enmeshed.eu).
+
+To get started developing in this repository, see the [developer's guide](README_dev.md).
+
+## Feedback
+
+Please file any bugs or feature requests by creating an [issue](https://github.com/nmshd/feedback/issues).
+
+Share your feedback with the Enmeshed team by contributing to the [discussions](https://github.com/nmshd/feedback/discussions).
+
+## Contribute
+
+Contribution to this project is highly apprecicated. Head over to our [contribution guide](https://github.com/nmshd/.github/blob/main/CONTRIBUTING.md) to learn more.
+
+## License
+
+[MIT](LICENSE)
