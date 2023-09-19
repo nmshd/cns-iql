@@ -1,7 +1,7 @@
-import * as _ from "lodash"
-import * as iql from "../src/index.js"
-import { test } from "mocha"
 import { assert } from "chai"
+import * as _ from "lodash"
+import { test } from "mocha"
+import * as iql from "../src/index.js"
 
 /* Dummy data. */
 const attributes = [
@@ -87,7 +87,9 @@ const attributes = [
         validTo: "2025-01-01T00:00:00",
         peer: "idasdf0x123152",
         tags: ["language:en", "language:de", "language:es"],
-        friends: ["Peter"]
+        friends: ["Peter"],
+        emptyArr: [],
+        emptyDict: {}
     }
 ]
 
@@ -214,7 +216,10 @@ test("Check queries", () => {
         { iqlQuery: String.raw`arr~'\'X\'\\\\\''`, matches: [2] },
         { iqlQuery: String.raw`arr~'\'X\' \\\\ \''`, matches: [2] },
         { iqlQuery: "emptyVal=", matches: [1] },
-        { iqlQuery: "emptyVal=''", matches: [1] }
+        { iqlQuery: "emptyVal=''", matches: [1] },
+        { iqlQuery: "emptyArr?", matches: [] },
+        { iqlQuery: "emptyDict?", matches: [] },
+        { iqlQuery: "foobar?", matches: [] }
     ]
 
     for (const e of table) {
