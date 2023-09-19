@@ -191,8 +191,18 @@ Predicate
   / op:[?]
     {
       switch (op) {
+        /* The ?-op checks whether a particular field is defined or not. Empty
+         * arrays and dicts are treated as undefined. */
         case "?":
-          return (fieldVal) => { return fieldVal != undefined }
+          return (fieldVal) => {
+            if (Array.isArray(fieldVal)) {
+              return fieldVal.length > 0
+            }
+            if (fieldVal.constructor.name === "Object") {
+              return Object.keys(fieldVal).length > 0
+            }
+            return ( fieldVal !== undefined && fieldVal !== null )
+          }
       }
     }
 
