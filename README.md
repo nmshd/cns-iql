@@ -1,7 +1,6 @@
 # IQL - The Enmeshed Identity Query Language
 
 [![GitHub Actions CI](https://github.com/nmshd/cns-iql/workflows/Publish/badge.svg)](https://github.com/nmshd/cns-iql/actions?query=workflow%3APublish)
-
 [![npm version](https://badge.fury.io/js/@nmshd%2Fiql.svg)](https://www.npmjs.com/package/@nmshd/iql)
 
 IQL is a domain-specific language to filter and query Enmeshed attributes.
